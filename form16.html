@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Форма регистрации с валидацией всех полей</title>
+    <link type="text/css" rel="stylesheet" href="./form16.css" />
+    <script src="./form16.js"></script>
+  </head>
+  <body>
+    <h1>Форма регистрации</h1>
+    <form novalidate name="registration" onSubmit="return formValidation();">
+      <ul>
+        <li><label for="username">Имя*:</label></li>
+        <li>
+          <input
+            type="text"
+            name="username"
+            placeholder="Введите имя"
+            required
+          />
+        </li>
+        <li><label for="age">Возраст*:</label></li>
+        <li>
+          <input
+            name="age"
+            type="number"
+            placeholder="Введите возраст"
+            required
+          />
+        </li>
+        <li><label for="address">Адрес*:</label></li>
+        <li>
+          <input
+            type="text"
+            name="address"
+            placeholder="Введите адрес"
+            required
+          />
+        </li>
+        <li><label for="email">Email*:</label></li>
+        <li>
+          <input
+            type="text"
+            name="email"
+            placeholder="Введите e-mail"
+            required
+          />
+        </li>
+        <li><label for="passid">Пароль*:</label></li>
+        <li>
+          <input
+            type="passid"
+            name="passid"
+            placeholder="Введите пароль"
+            required
+          />
+        </li>
+        <li><label for="profession">Профессия*:</label></li>
+        <li>
+          <select name="profession" required>
+            <option value="" disabled selected>Выберите профессию</option>
+            <option value="DOC">Врач</option>
+            <option value="PRO">Программист</option>
+            <option value="TEA">Учитель</option>
+            <option value="DIS">Дизайнер</option>
+            <option value="ING">Инженер</option>
+            <option value="SEL">Продавец</option>
+            <option value="OTH">Другое</option>
+          </select>
+        </li>
+        <li><label for="msex">Пол:</label></li>
+        <li>
+          <input type="radio" name="msex" value="Male" /><span>Мужской</span>
+        </li>
+        <li>
+          <input type="radio" name="fsex" value="Female" /><span>Женский</span>
+        </li>
+        <li>
+          <input
+            type="checkbox"
+            id="agreeTerms"
+            name="agree"
+            value="agree"
+            required
+          /><span>Согласен на обработку персональных данных*</span>
+        </li>
+        <p class="error-message" id="errorMessage"></p>
+        <li>
+          <input
+            type="submit"
+            id="submitBtn"
+            name="submit"
+            value="Submit"
+            disabled
+          />
+        </li>
+      </ul>
+    </form>
+  </body>
+</html>
