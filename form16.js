@@ -1,18 +1,18 @@
 /*function formValidation() {
-  let uname = document.registration.username;
-  let uage = document.registration.age;
-  let uadd = document.registration.address;
-  let uemail = document.registration.email;
-  let passid = document.registration.passid;
-  let uprofession = document.registration.profession;
-  let umsex = document.registration.msex;
-  let ufsex = document.registration.fsex;
+  const uname = document.registration.username;
+  const uage = document.registration.age;
+  const uadd = document.registration.address;
+  const uemail = document.registration.email;
+  const passid = document.registration.passid;
+  const uprofession = document.registration.profession;
+  const umsex = document.registration.msex;
+  const ufsex = document.registration.fsex;
 
   if (allLetter(uname)) {
     if (uAge(uage)) {
       if (alphanumeric(uadd)) {
         if (ValidateEmail(uemail)) {
-          if (passid_validation(passid, 7, 12)) {
+          if (passidValidation(passid, 7, 12)) {
             if (professionselect(uprofession)) {
               if (validsex(umsex, ufsex)) {
               }
@@ -26,7 +26,7 @@
 }
 
 function allLetter(uname) {
-  let letters = /^[a-zA-Zа-яА-Я\s]{2,20}$/;
+  const letters = /^[a-zA-Zа-яА-Я\s]{2,20}$/;
   if (uname.value.match(letters)) {
     return true;
   } else {
@@ -38,7 +38,7 @@ function allLetter(uname) {
   }
 }
 function uAge(uage) {
-  let age = /^[0-9]{1,3}$/;
+  const age = /^[0-9]{1,3}$/;
   if (uage.value.match(age)) {
     return true;
   } else {
@@ -49,7 +49,7 @@ function uAge(uage) {
 }
 
 function alphanumeric(uadd) {
-  let letters = /^[a-zA-Zа-яА-Я0-9\s]+$/;
+  const letters = /^[a-zA-Zа-яА-Я0-9\s]+$/;
   if (uadd.value.match(letters)) {
     return true;
   } else {
@@ -60,7 +60,7 @@ function alphanumeric(uadd) {
 }
 
 function ValidateEmail(uemail) {
-  let mailformat = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+  const mailformat = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
   if (uemail.value.match(mailformat)) {
     return true;
   } else {
@@ -69,9 +69,9 @@ function ValidateEmail(uemail) {
     return false;
   }
 }
-function passid_validation(passid, mx, my) {
-  let passid_len = passid.value.length;
-  if (passid_len == 0 || passid_len >= my || passid_len < mx) {
+function passidValidation(passid, mx, my) {
+  const passidLen = passid.value.length;
+  if (passidLen == 0 || passidLen >= my || passidLen < mx) {
     alert("Пароль не может быть пустым / длина от " + mx + " до " + my);
     passid.focus();
     return false;
